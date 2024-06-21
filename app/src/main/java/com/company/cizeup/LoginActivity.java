@@ -10,7 +10,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import kotlin.experimental.ExperimentalObjCName;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -44,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
+    // 사용자 로그인
     private void loginUser() {
         String email = emailEd.getText().toString().trim();
         String password = passwordEd.getText().toString().trim();
@@ -56,13 +56,18 @@ public class LoginActivity extends AppCompatActivity {
         Cursor cursor = dbManager.getUser(email);
         if (cursor != null && cursor.moveToFirst()) {
             int passwordColumnIndex = cursor.getColumnIndex(DBManager.getColumnPassword());
+            int nameColumnIndex = cursor.getColumnIndex(DBManager.getColumnName());
+
             if (passwordColumnIndex >= 0) {  // Ensure column index is valid
                 String storedPassword = cursor.getString(passwordColumnIndex);
+                String userName = cursor.getString(nameColumnIndex);
 
                 if (storedPassword.equals(password)) {
                     Toast.makeText(LoginActivity.this, "Login successful.", Toast.LENGTH_SHORT).show();
                     // 로그인 성공 후 메인 화면으로 이동
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                    intent.putExtra("USER_NAME", userName);
+                    startActivity(intent);
                     finish();
                 } else {
                     Toast.makeText(LoginActivity.this, "타당하지 않은 이메일 또는 패스워드입니다.", Toast.LENGTH_SHORT).show();

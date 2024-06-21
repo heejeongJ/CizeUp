@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home_selector"
+        android:title="Home" />
+    <item
+        android:id="@+id/nav_interview"
+        android:icon="@drawable/interview_selector"
+        android:title="Interview" />
+    <item
+        android:id="@+id/nav_resume"
+        android:icon="@drawable/resume_selector"
+        android:title="Resume" />
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/profile_selector"
+        android:title="Profile" />
+</menu>

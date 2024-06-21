@@ -1,19 +1,186 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <!-- 상단 콘텐츠 레이아웃 -->
+<!--    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_navigation"
+        android:padding="16dp">-->
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- 상단 로고 및 인사말 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="50dp"
+                android:paddingBottom="30dp">
+
+                <!--Cizeup 로고 및 인사말-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="10dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CizeUp"
+                        android:textColor="#0A77FF"
+                        android:textSize="26sp"
+                        android:textStyle="bold" />
+
+                    <!--name에 따라 "환영합니다.{name}님"으로 변경됨-->
+                    <TextView
+                        android:id="@+id/welcomeTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="환영합니다, 김슈니님."
+                        android:textSize="16sp"
+                        android:paddingTop="10dp"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CizeUp과 함께 효율적으로 취업 준비해요!"
+                        android:textSize="13sp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/background_textview"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center">
+
+                    <!--name에 따라 "🧙 반가워요! 저는 {name}님을 취업으로 인도할 Cizz예요! 🧙"으로 변경됨-->
+                    <TextView
+                        android:id="@+id/iconTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="🧙 반가워요! 저는 김슈니님을 취업으로 인도할 Cizz예요! 🧙"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+            <!-- 면접 연습하기 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="20dp"
+                android:layout_marginLeft="10dp">
+
+                <!--면접 준비하기 텍스트 -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="면접 연습하기"
+                    android:textColor="#0A77FF"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="기본 면접 질문 연습, 준비하기!"
+                    android:textSize="15sp"
+                    android:paddingTop="5dp"/>
+            </LinearLayout>
+
+
+
+            <!--면접 연습 버튼-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <!--면접 연습 버튼-->
+                <Button
+                    android:id="@+id/btn_practice_interview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#E0E7FF"
+                    android:text="면접 준비하기"
+                    android:textStyle="bold"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textColor="#0A77FF"/>
+            </LinearLayout>
+
+
+            <!-- 자기소개서 & 이력서 준비 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="20dp"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="자기소개서와 이력서 준비하기"
+                    android:textColor="#0A77FF"
+                    android:paddingTop="30dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="면접 예상 질문도 한 번에 뽀개기!"
+                    android:textSize="15sp"
+                    android:paddingTop="5dp"/>
+            </LinearLayout>
+
+            <!--지원서 준비 버튼-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center">
+                <!--지원서 준비 버튼-->
+                <Button
+                    android:id="@+id/btn_prepare_resume"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:backgroundTint="#E0E7FF"
+                    android:text="작성하러 가기"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:textStyle="bold"
+                    android:textColor="#0A77FF"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+        <!-- 하단 네비게이션 바 -->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            app:menu="@menu/main_menu_bottom" />
+
+</RelativeLayout>
