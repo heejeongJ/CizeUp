@@ -19,7 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingTop="50dp"
+            android:paddingTop="30dp"
             android:paddingBottom="30dp">
 
             <!--Cizeup 로고 및 인사말-->

@@ -1,0 +1,169 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- CizeUp 텍스트 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="9dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CizeUp"
+            android:textColor="#0A77FF"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- 가로선 -->
+    <View
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="#B0B0B0"
+        android:layout_marginTop="69dp"
+        android:layout_marginBottom="30dp" />
+
+    <!-- 상단 콘텐츠 레이아웃 -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_below="@id/line"
+        android:layout_above="@id/next_button"
+        android:fillViewport="true">
+
+        <!-- 전체 레이아웃 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 이력서 생성 텍스트 레이아웃 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이력서 "
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blue"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 생성"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"/>
+            </LinearLayout>
+
+            <!-- 직무 맞춤형 이력서를 생성해보세요! 텍스트 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="직무 맞춤형 이력서를 생성해보세요!"
+                    android:textColor="@color/gray"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="20dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="15dp">
+
+                <!-- 이력 / 경력 입력 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:paddingTop="20dp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="이력/경력" />
+
+                <EditText
+                    android:id="@+id/career"
+                    android:layout_width="312dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/edit_text"
+                    android:hint="   사명 / 직무 / 기간 / 담당 업무"
+                    android:textSize="10dp"
+                    android:inputType="text"
+                    android:padding="14dp" />
+
+                <!-- 프로젝트 경험 입력 -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:textStyle="bold"
+                    android:text="프로젝트 경험" />
+
+                <EditText
+                    android:id="@+id/project"
+                    android:layout_width="312dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="47dp"
+                    android:background="@drawable/edit_text"
+                    android:hint="   담당했던 프로젝트 경험을 적어주세요."
+                    android:textSize="10dp"
+                    android:inputType="text"
+                    android:padding="14dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 다음 버튼 -->
+    <android.widget.Button
+        android:id="@+id/next_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_above="@id/bottom_navigation"
+        android:background="@drawable/blue_button_next"
+        android:gravity="center"
+        android:text="⪫"
+        android:textSize="20dp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <!-- 하단 네비게이션 바 -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/main_menu_bottom" />
+
+</RelativeLayout>

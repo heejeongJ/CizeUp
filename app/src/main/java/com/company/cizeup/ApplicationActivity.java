@@ -64,7 +64,7 @@ public class ApplicationActivity extends BaseActivity {
         btnCreateResume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ApplicationActivity.this, ResumeActivity.class);
+                Intent intent = new Intent(ApplicationActivity.this, ResumeStep1Activity.class);
                 intent.putExtra("USER_NAME", userName);  // 사용자 이름 전달
                 startActivity(intent);
             }
@@ -95,6 +95,7 @@ public class ApplicationActivity extends BaseActivity {
                     startActivity(new Intent(ApplicationActivity.this, InterviewActivity.class));
                     return true;
                 } else if (itemId == R.id.nav_resume) {
+                    startActivity(new Intent(ApplicationActivity.this, InterviewActivity.class));
                     return true;
                 } else if (itemId == R.id.nav_profile) {
                     // 프로필 화면으로 이동

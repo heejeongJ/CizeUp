@@ -32,6 +32,26 @@
         </activity>
 
         <activity
+            android:name=".ResumeStep1Activity"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".ResumeStep2Activity"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".ResumeStep3Activity"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".ResumeStep4Activity"
+            android:exported="true">
+        </activity>
+
+        <activity
             android:name=".InterviewActivity"
             android:exported="true">
         </activity>

@@ -1,0 +1,199 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <!-- CizeUp 텍스트 -->
+    <LinearLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CizeUp"
+            android:textColor="#0A77FF"
+            android:layout_marginTop="10dp"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <!-- 가로선 -->
+        <View
+            android:id="@+id/line"
+            android:layout_width="match_parent"
+            android:layout_height="2px"
+            android:background="#B0B0B0"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="30dp" />
+    </LinearLayout>
+
+    <!-- 상단 콘텐츠 레이아웃 -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/title_layout"
+        android:layout_above="@id/bottom_navigation"
+        android:fillViewport="true">
+
+        <!-- 전체 레이아웃 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- 이력서 생성 텍스트 레이아웃 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이력서 "
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/blue"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 생성"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="10dp"/>
+            </LinearLayout>
+
+            <!-- 직무 맞춤형 이력서를 생성해보세요! 텍스트 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="직무 맞춤형 이력서를 생성해보세요!"
+                    android:textColor="@color/gray"
+                    android:textSize="14sp"
+                    android:layout_marginBottom="20dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="15dp">
+
+                <!--기술 스택 입력-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:paddingTop="20dp"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:text="기술 스택" />
+
+                <EditText
+                    android:id="@+id/tech_stack"
+                    android:layout_width="312dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/edit_text"
+                    android:hint="   ex. Java, MySQL"
+                    android:textSize="10dp"
+                    android:inputType="text"
+                    android:padding="14dp" />
+
+                <!--깃허브 링크 입력-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:textStyle="bold"
+                    android:text="깃허브 링크" />
+
+                <EditText
+                    android:id="@+id/github"
+                    android:layout_width="312dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/edit_text"
+                    android:hint="   주로 작업하는 깃허브 계정 링크를 첨부해주세요."
+                    android:textSize="10dp"
+                    android:inputType="text"
+                    android:padding="14dp" />
+
+                <!--자격증 및 수료 입력-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:textStyle="bold"
+                    android:text="자격증 및 수료" />
+
+                <EditText
+                    android:id="@+id/certificate"
+                    android:layout_width="312dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="20dp"
+                    android:background="@drawable/edit_text"
+                    android:hint="    ex. 정보처리기사, SQLD"
+                    android:textSize="10dp"
+                    android:inputType="text"
+                    android:padding="14dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right">
+                <android.widget.Button
+                    android:id="@+id/next_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/blue_button_next"
+                    android:gravity="center"
+                    android:text="⪫"
+                    android:textColor="@android:color/white"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 다음 버튼 -->
+
+    <!-- 하단 네비게이션 바 -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/main_menu_bottom" />
+
+</RelativeLayout>
