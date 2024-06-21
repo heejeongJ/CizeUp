@@ -23,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingTop="50dp"
+                android:paddingTop="20dp"
                 android:paddingBottom="30dp">
 
                 <!--Cizeup 로고 및 인사말-->
@@ -54,8 +54,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="CizeUp과 함께 효율적으로 취업 준비해요!"
-                        android:textSize="13sp"
-                        android:textStyle="bold"/>
+                        android:textSize="13sp" />
                 </LinearLayout>
 
 
@@ -64,7 +63,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
                     android:background="@drawable/background_textview"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="10dp"
                     android:gravity="center">
 
                     <!--name에 따라 "🧙 반가워요! 저는 {name}님을 취업으로 인도할 Cizz예요! 🧙"으로 변경됨-->
@@ -85,6 +84,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingBottom="20dp"
+                android:paddingTop="25dp"
                 android:layout_marginLeft="10dp">
 
                 <!--면접 준비하기 텍스트 -->
@@ -133,6 +133,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingBottom="20dp"
+                android:paddingTop="0dp"
                 android:layout_marginLeft="10dp">
 
                 <TextView
@@ -175,12 +176,12 @@
 
 
 
-        <!-- 하단 네비게이션 바 -->
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            app:menu="@menu/main_menu_bottom" />
+    <!-- 하단 네비게이션 바 -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:menu="@menu/main_menu_bottom" />
 
 </RelativeLayout>
