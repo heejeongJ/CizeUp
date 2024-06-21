@@ -1,0 +1,128 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+
+    android:padding="16dp"
+    tools:context=".LoginActivity">
+
+    <!--android:gravity="center"-->
+
+
+    <!--welcom mark-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:paddingTop="100dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome To"
+            android:textColor="@android:color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CizeUp"
+            android:textSize="28sp"
+            android:textColor="@color/blue"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+
+    <!--이메일, 비밀번호 입력 editText-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingTop="70dp">
+
+        <!--이메일 입력-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_height="wrap_content"
+            android:text="Email" />
+
+        <EditText
+            android:id="@+id/email"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/edit_text"
+            android:hint="cizeup@example.com"
+            android:inputType="textEmailAddress"
+            android:padding="14dp" />
+
+
+        <!--password 입력-->
+        <TextView
+            android:layout_marginLeft="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="password" />
+
+        <EditText
+            android:id="@+id/password"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="@drawable/edit_text"
+            android:hint=" ************ "
+            android:inputType="textPassword"
+            android:padding="14dp" />
+    </LinearLayout>
+
+
+
+    <!--로그인 버튼-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <android.widget.Button
+            android:id="@+id/login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="로그인"
+            android:textStyle="bold"
+            android:background="@drawable/blue_button_shadow"
+
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+
+    <!--아이디가 있는 경우-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:onClick="goToSignup"
+            android:text="Don't have an account ? "
+            android:textColor="@android:color/darker_gray" />
+        <TextView
+            android:id="@+id/signup_moveTo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sign up"
+            android:textColor="@color/blue"/>
+    </LinearLayout>
+</LinearLayout>
