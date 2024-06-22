@@ -168,19 +168,43 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="right">
+                android:orientation="horizontal">
 
-                <android.widget.Button
-                    android:id="@+id/next_button"
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="30dp"
-                    android:background="@drawable/blue_button_next"
-                    android:gravity="center"
-                    android:text="⪫"
-                    android:textSize="20dp"
-                    android:textColor="@android:color/white"
-                    android:textStyle="bold" />
+                    android:gravity="left">
+
+                    <android.widget.Button
+                        android:id="@+id/before_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/blue_button_next"
+                        android:gravity="center"
+                        android:text="⪪"
+                        android:textColor="@android:color/white"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:layout_marginLeft="165dp">
+
+                    <android.widget.Button
+                        android:id="@+id/next_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="30dp"
+                        android:background="@drawable/blue_button_next"
+                        android:gravity="center"
+                        android:text="⪫"
+                        android:textSize="20dp"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

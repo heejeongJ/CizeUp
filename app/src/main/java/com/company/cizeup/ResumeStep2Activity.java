@@ -16,7 +16,7 @@ public class ResumeStep2Activity extends BaseActivity {
     private EditText techStackEditText;                 // 기술 스택
     private EditText githubEditText;                    // 깃허브 링크
     private EditText certificateEditText;               // 자격증 및 수료
-    private Button nextButton;                          // 다음 버튼
+    private Button beforeButton,nextButton;                          // 다음 버튼
     private String userName;                            // 사용자 이름
 
     @Override
@@ -29,6 +29,7 @@ public class ResumeStep2Activity extends BaseActivity {
         techStackEditText = findViewById(R.id.tech_stack);
         githubEditText = findViewById(R.id.github);
         certificateEditText = findViewById(R.id.certificate);
+        beforeButton = findViewById(R.id.before_button);
         nextButton = findViewById(R.id.next_button);
 
         // 이전 화면에서 전달된 데이터 받아오기
@@ -38,8 +39,31 @@ public class ResumeStep2Activity extends BaseActivity {
         String contact = intent.getStringExtra("CONTACT");
         String education = intent.getStringExtra("EDUCATION");
 
-        // 다음 버튼 클릭 리스너 설정
+
         // 이력서 작성 화면 이동 버튼
+        // 이전 버튼 클릭 리스너 설정
+        beforeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 입력된 데이터 가져오기
+                String techStack = techStackEditText.getText().toString().trim();
+                String github = githubEditText.getText().toString().trim();
+                String certificate = certificateEditText.getText().toString().trim();
+
+                // 이전 페이지에 정보 전달
+                Intent intent = new Intent(ResumeStep2Activity.this, ResumeStep1Activity.class);
+                intent.putExtra("USER_NAME", userName);  // 사용자 이름 전달
+                intent.putExtra("DESIRED_JOB", desiredJob);
+                intent.putExtra("CONTACT", contact);
+                intent.putExtra("EDUCATION", education);
+                intent.putExtra("TECH_STACK", techStack);
+                intent.putExtra("GITHUB", github);
+                intent.putExtra("CERTIFICATE", certificate);
+
+                startActivity(intent);
+            }
+        });
+        // 다음 버튼 클릭 리스너 설정
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

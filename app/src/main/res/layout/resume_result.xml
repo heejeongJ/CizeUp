@@ -127,32 +127,18 @@
                 android:text="✨ 강조하고 싶은 내용을 작성할 수록 정확도가 올라가고 더욱 맞춤화돼요! ✨"/>
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <android.widget.Button
+            android:id="@+id/btn_resume"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="right">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="마지막 페이지예요!"
-                android:layout_marginTop="42dp"
-                android:textSize="10dp"
-                android:textColor="@color/gray"
-                android:textStyle="bold"/>
+            android:layout_marginTop="30dp"
+            android:background="@drawable/blue_button_shadow"
+            android:gravity="center"
+            android:text="이력서 생성하기"
+            android:textSize="14dp"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
 
-            <android.widget.Button
-                android:id="@+id/next_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/blue_button_next"
-                android:gravity="center"
-                android:text="⪫"
-                android:textSize="20dp"
-                android:textColor="@android:color/white"
-                android:textStyle="bold" />
-
-        </LinearLayout>
     </LinearLayout>
     <!-- 하단 네비게이션 바 -->
     <com.google.android.material.bottomnavigation.BottomNavigationView

@@ -16,7 +16,7 @@ public class ResumeStep1Activity extends BaseActivity {
     private EditText desiredJobEditText;                // 희망 직무
     private EditText contactEditText;                   // 연락처
     private EditText educationEditText;                 // 학력
-    private Button nextButton;                          // 다음 버튼
+    private Button beforeButton, nextButton;                          // 다음 버튼
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,14 +28,34 @@ public class ResumeStep1Activity extends BaseActivity {
         desiredJobEditText = findViewById(R.id.desired_job);
         contactEditText = findViewById(R.id.contact);
         educationEditText = findViewById(R.id.education);
+        beforeButton = findViewById(R.id.before_button);
         nextButton = findViewById(R.id.next_button);
 
         // 이전 화면에서 사용자의 name 받아옴
         Intent intent = getIntent();
         String userName = intent.getStringExtra("USER_NAME");
 
-        // 다음 버튼 클릭 리스너 설정
+
         // 이력서 작성 화면 이동 버튼
+        beforeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // 입력된 데이터 가져오기
+                String desiredJob = desiredJobEditText.getText().toString().trim();
+                String contact = contactEditText.getText().toString().trim();
+                String education = educationEditText.getText().toString().trim();
+
+                // 다음 페이지에 정보 전달
+                Intent intent = new Intent(ResumeStep1Activity.this, ApplicationActivity.class);
+                intent.putExtra("USER_NAME", userName);  // 사용자 이름 전달
+                intent.putExtra("DESIRED_JOB", desiredJob);
+                intent.putExtra("CONTACT", contact);
+                intent.putExtra("EDUCATION", education);
+
+                startActivity(intent);
+            }
+        });
+        // 다음 버튼 클릭 리스너 설정
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

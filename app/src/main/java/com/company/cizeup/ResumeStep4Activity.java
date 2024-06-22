@@ -15,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ResumeStep4Activity extends BaseActivity {
 
     private EditText emphasisContentEditText;         // 어필/강조하고 싶은 내용
-    private Button nextButton;                        // 다음 버튼
+    private Button createResumeBtn;                        // 다음 버튼
     private String userName;                          // 사용자 이름
 
     @Override
@@ -26,7 +26,7 @@ public class ResumeStep4Activity extends BaseActivity {
 
         // View 초기화
         emphasisContentEditText = findViewById(R.id.project);
-        nextButton = findViewById(R.id.next_button);
+        createResumeBtn = findViewById(R.id.btn_resume);
 
         // 이전 화면에서 전달된 데이터 받아오기
         Intent intent = getIntent();
@@ -41,7 +41,7 @@ public class ResumeStep4Activity extends BaseActivity {
         String project = intent.getStringExtra("PROJECT");
 
         // 다음 버튼 클릭 리스너 설정
-        nextButton.setOnClickListener(new View.OnClickListener() {
+        createResumeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // 입력된 데이터 가져오기
