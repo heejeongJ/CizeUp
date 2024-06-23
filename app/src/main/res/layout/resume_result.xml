@@ -4,142 +4,365 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
-    <!--전체 레이아웃-->
+
+    <!-- 고정될 상단 레이아웃 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="1dp"
+        android:layout_alignParentTop="true">
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_marginTop="1dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="CizeUp"
-                android:textColor="#0A77FF"
-                android:textSize="30sp"
-                android:textStyle="bold"
-                android:layout_marginBottom="0dp"/>
-        </LinearLayout>
+            android:text="CizeUp"
+            android:textColor="#0A77FF"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="0dp"/>
 
         <!--가로선-->
         <View
-            android:layout_marginTop="15dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="20dp"
             android:layout_width="match_parent"
             android:layout_height="2px"
             android:background="#B0B0B0"/>
-
-
-        <!--이력서 생성 텍스트 레이아웃-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_marginLeft="20dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="이력서 "
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:textColor="@color/blue"
-                android:layout_marginBottom="10dp"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=" 생성"
-                android:textSize="20sp"
-                android:textStyle="bold"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="10dp"/>
-
-        </LinearLayout>
-
-
-
-        <!--이력서 작 성시 어필/강조하고 싶은 내용이 있나요? 텍스트-->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="20dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="이력서 작 성시 어필/강조하고 싶은 내용이 있나요?"
-                android:textColor="@color/gray"
-                android:textSize="14sp"
-                android:layout_centerHorizontal="true"
-                android:layout_marginBottom="50dp"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginLeft="15dp">
-
-
-            <!--강조 내용 입력-->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_marginLeft="20dp"
-                android:paddingTop="10dp"
-                android:layout_height="wrap_content"
-                android:paddingBottom="4dp"
-                android:textStyle="bold"
-                android:text="어필/강조하고 싶은 내용" />
-
-            <EditText
-                android:id="@+id/project"
-                android:layout_width="312dp"
-                android:layout_marginLeft="14dp"
-                android:layout_height="110dp"
-                android:layout_marginTop="4dp"
-
-                android:background="@drawable/edit_text"
-                android:hint="   어필/강조하고 싶은 내용을 작성해주세요. (필수 작성 x)"
-                android:textSize="10dp"
-                android:inputType="text"
-                android:padding="14dp"
-                android:layout_marginBottom="10dp"/>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:textSize="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_height="wrap_content"
-                android:textColor="@color/gray"
-                android:layout_marginBottom="112dp"
-                android:text="✨ 강조하고 싶은 내용을 작성할 수록 정확도가 올라가고 더욱 맞춤화돼요! ✨"/>
-        </LinearLayout>
-
-        <android.widget.Button
-            android:id="@+id/btn_resume"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/blue_button_shadow"
-            android:gravity="center"
-            android:text="이력서 생성하기"
-            android:textSize="14dp"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
-
     </LinearLayout>
+
+    <!-- ScrollView로 감싼 스크롤 가능한 콘텐츠 레이아웃 -->
+    <ScrollView
+        android:layout_marginTop="90dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/bottom_navigation"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp">
+
+            <!--이력서 생성 텍스트 레이아웃-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="이력서 "
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:textColor="@color/blue"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" 생성"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="10dp"/>
+
+            </LinearLayout>
+
+            <!--생성 결과 안내-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="맞춤 이력서가 생성되었습니다."
+                    android:textColor="@color/gray"
+                    android:textSize="14sp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginBottom="50dp"/>
+            </LinearLayout>
+
+            <!--생성 목록-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginLeft="15dp">
+
+                <!--가로선-->
+                <View
+                    android:layout_marginTop="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="57dp"
+                    android:layout_height="10px"
+                    android:background="@color/blue"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="20dp">
+                    <!--이름, 직무 적어줄 예정-->
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:paddingTop="10dp"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="4dp"
+                        android:textStyle="bold"
+                        android:textSize="18dp"
+                        android:text="김슈니" />
+                    <TextView
+                        android:id="@+id/desired_job"
+                        android:layout_width="match_parent"
+                        android:layout_marginLeft="20dp"
+                        android:paddingTop="10dp"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="4dp"
+                        android:textStyle="bold"
+                        android:textSize="16dp"
+                        android:text="소프트웨어 엔지니어"
+                        android:textColor="#606060"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="15dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <!--연락처 정보-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Contact."
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/blue" />
+
+                    </LinearLayout>
+                    <!--연락처 정보:email-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Email."
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/gray"/>
+                        <TextView
+                            android:id="@+id/email"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="swunii@swu.ac.kr"
+                            android:layout_marginLeft="13dp"
+                            android:textSize="15dp"
+                            android:textColor="@color/gray" />
+                    </LinearLayout>
+                    <!--연락처 정보:Phone-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="14dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Phone."
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/gray"/>
+                        <TextView
+                            android:id="@+id/contact"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="010-0000-0000"
+                            android:layout_marginLeft="13dp"
+                            android:textSize="15dp"
+                            android:textColor="@color/gray" />
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginLeft="15dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <!--Channel 정보-->
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Channel."
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/blue" />
+
+                    </LinearLayout>
+                    <!--연락처 정보:GitHub-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="GitHub."
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/gray"/>
+                        <TextView
+                            android:id="@+id/github"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="https://github.com/swunii"
+                            android:layout_marginLeft="13dp"
+                            android:textSize="15dp"
+                            android:textColor="@color/gray" />
+                    </LinearLayout>
+                    <!--연락처 정보:Blog-->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="15dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Blog."
+                            android:textSize="15dp"
+                            android:textStyle="bold"
+                            android:textColor="@color/gray"/>
+                        <TextView
+                            android:id="@+id/blog"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="https://swunii.space/"
+                            android:layout_marginLeft="13dp"
+                            android:textSize="15dp"
+                            android:textColor="@color/gray" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!--가로선-->
+                <View
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="35dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="305dp"
+                    android:layout_height="5px"
+                    android:background="#D8E5F6"/>
+
+                <!--AI가 생성한 소개글-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:text="AI가 생성한 소개글 ✨ " />
+
+                <TextView
+                    android:id="@+id/ai_made_intoduce"
+                    android:layout_width="312dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_height="140dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/rounded_blue_border"
+                    android:hint="   AI가 생성한 소개글이에요."
+                    android:textSize="13dp"
+                    android:padding="14dp"
+                    android:layout_marginBottom="20dp"/>
+
+                <!--AI가 생성한 경력/이력-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:text="1. 경력/이력" />
+
+                <TextView
+                    android:id="@+id/work_experience"
+                    android:layout_width="312dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_height="140dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/edit_text"
+                    android:hint="   AI가 생성한 경력이에요."
+                    android:textSize="13dp"
+                    android:padding="14dp"
+                    android:layout_marginBottom="20dp"/>
+
+                <!--AI가 생성한 프로젝트 경험-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:paddingTop="10dp"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:text="2. 프로젝트 경험" />
+
+                <TextView
+                    android:id="@+id/project_experience"
+                    android:layout_width="312dp"
+                    android:layout_marginLeft="14dp"
+                    android:layout_height="140dp"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/edit_text"
+                    android:hint="   AI가 생성한 프로젝트 내용이에요."
+                    android:textSize="13dp"
+                    android:padding="14dp"
+                    android:layout_marginBottom="20dp"/>
+
+            </LinearLayout>
+
+            <android.widget.Button
+                android:id="@+id/btn_resume"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/blue_button_shadow"
+                android:gravity="center"
+                android:text="이력서 생성하기"
+                android:textSize="14dp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
     <!-- 하단 네비게이션 바 -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
@@ -147,4 +370,5 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         app:menu="@menu/main_menu_bottom" />
+
 </RelativeLayout>

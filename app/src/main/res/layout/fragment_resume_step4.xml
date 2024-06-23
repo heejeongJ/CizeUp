@@ -106,7 +106,7 @@
                     android:text="어필/강조하고 싶은 내용" />
 
                 <EditText
-                    android:id="@+id/project"
+                    android:id="@+id/emphasisContent"
                     android:layout_width="312dp"
                     android:layout_marginLeft="14dp"
                     android:layout_height="110dp"

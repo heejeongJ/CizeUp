@@ -49,7 +49,7 @@ public class ResumeStep1Activity extends BaseActivity {
                 Intent intent = new Intent(ResumeStep1Activity.this, ApplicationActivity.class);
                 intent.putExtra("USER_NAME", userName);  // 사용자 이름 전달
                 intent.putExtra("DESIRED_JOB", desiredJob);
-                intent.putExtra("CONTACT", contact);
+                intent.putExtra("CONTACT", contact);        // 전화번호
                 intent.putExtra("EDUCATION", education);
 
                 startActivity(intent);
@@ -68,7 +68,7 @@ public class ResumeStep1Activity extends BaseActivity {
                 Intent intent = new Intent(ResumeStep1Activity.this, ResumeStep2Activity.class);
                 intent.putExtra("USER_NAME", userName);  // 사용자 이름 전달
                 intent.putExtra("DESIRED_JOB", desiredJob);
-                intent.putExtra("CONTACT", contact);
+                intent.putExtra("CONTACT", contact);    // 전화번호
                 intent.putExtra("EDUCATION", education);
 
                 startActivity(intent);
